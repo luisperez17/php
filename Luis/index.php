@@ -8,6 +8,7 @@
     <h2>Formulario PHP</h2>
     <form action="procesar.php" method="POST">
         <label for="nombre">Nombre:</label>
+        <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" required><br>
 
         <label for="email">Email:</label>
