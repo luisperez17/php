@@ -4,23 +4,21 @@
     <title>Procesamiento PHP</title>
 </head>
 <body>
-    <h1>Procesamiento de PHP</h1>
+    <h2>Procesamiento PHP</h2>
     <?php
-        //var_dump($_POST);
-        $nombre = $_POST['nombre'];
-        $email = $_POST['email'];
-        $edad = $_POST['edad'];
-        $genero = $_POST['genero'];
-        $preferencias = $_POST['preferencias'];
-        $estado_civil = $_POST['estado_civil'];
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $edad = $_POST['edad'];
+    $genero = $_POST['genero'];
+    $preferencias = $_POST['preferencias'];
+    $estado_civil = $_POST['estado_civil'];
 
-        echo "<p>Nombre: $nombre</p>";
-        echo "<p>Email: $email</p>";
-        echo "<p>Edad: $edad</p>";
-        echo "<p>Género: $genero</p>";
-        echo "<p>Preferencias: $preferencias</p>";
-        echo "<p>Estado civil: $estado_civil</p>";
-
+    echo "<p>Nombre: $nombre</p>";
+    echo "<p>email: $email</p>";
+    echo "<p>edad: $edad</p>";
+    echo "<p>genero: $genero</p>";
+    echo "<p>preferencias: $preferencias</p>";
+    echo "<p>estado_civil: $estado_civil</p>";
     ?>
 </body>
 </html>
