@@ -6,6 +6,8 @@
 <body>
     <h2>Procesamiento PHP</h2>
     <?php
+    include 'modelo/modelo.php';
+
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
     $edad = $_POST['edad'];
@@ -13,12 +15,16 @@
     $preferencias = $_POST['preferencias'];
     $estado_civil = $_POST['estado_civil'];
 
-    echo "<p>Nombre: $nombre</p>";
-    echo "<p>email: $email</p>";
-    echo "<p>edad: $edad</p>";
-    echo "<p>genero: $genero</p>";
-    echo "<p>preferencias: $preferencias</p>";
-    echo "<p>estado_civil: $estado_civil</p>";
+    //echo "<p>Nombre: $nombre</p>";
+    //echo "<p>email: $email</p>";
+    //echo "<p>edad: $edad</p>";
+    //echo "<p>genero: $genero</p>";
+    //echo "<p>preferencias: $preferencias</p>";
+    //echo "<p>estado_civil: $estado_civil</p>";
+
+    guardarDatos($nombre, $email, $edad, $genero, $preferencias, $estado_civil);
+
+    header("Location: /vista/vista.php");
     ?>
 </body>
 </html>

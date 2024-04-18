@@ -8,7 +8,6 @@
     <h2>Formulario PHP</h2>
     <form action="procesar.php" method="POST">
         <label for="nombre">Nombre:</label>
-        <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" required><br>
 
         <label for="email">Email:</label>
@@ -17,7 +16,7 @@
         <label for="edad">Edad:</label>
         <input type="number" name="edad" id="edad" required><br>
 
-        <label for="edad">Edad:</label>
+        <label for="genero">Genero:</label>
         <select name="genero" id="genero" required>
             <option value="masculino">Masculino</option>
             <option value="femenino">Femenino</option>
