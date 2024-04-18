@@ -25,7 +25,3 @@ function guardarDatos($nombre, $email, $edad, $genero, $preferencias, $estado_ci
     $conn->close();
 
 }
-
-
-
-?>
