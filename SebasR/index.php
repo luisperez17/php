@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h2>Subir archivos</h2>
+    <form action="procesar.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="archivo" accept=".csv">
+        <input type="submit" value="Subir archivo">
+    </form>
     <h2>Formulario PHP</h2>
     <form action="procesar.php" method="POST">
         <label for="nombre">Nombre:</label>
