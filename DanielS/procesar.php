@@ -24,6 +24,5 @@
         header("Location: vista/vista.php")
     ?>
 
-    
 </body>
 </html>
