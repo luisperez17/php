@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libros>
+<libro>
+    <titulo paginas="600"> El Quijote de la Mancha</titulo>
+    <autor>
+        <nombre>Miguel</nombre>
+        <apellidos>de Cervantes</apellidos>
+    </autor>
+    <editorial>Oveja Negra</editorial>
+    <precio>200.00</precio>
+    <fecha>2005</fecha>
+</libro>
+<libro>
+    <titulo  paginas="500">Cien años de soledad</titulo>
+    <autor>
+        <nombre>Gabriel</nombre>
+        <apellidos>García Márquez</apellidos>
+    </autor>
+    <editorial>Oveja Negra</editorial>
+    <precio>300.00</precio>
+    <fecha>2000</fecha>
+</libro>
+<libro>
+    <titulo paginas="600">La guerra del fin del mundo</titulo>
+    <autor>
+        <nombre>Mario</nombre>
+        <apellidos>Vargas Llosa</apellidos>
+    </autor>
+    <editorial>El barco de vapor</editorial>
+    <precio>350.00</precio>
+    <fecha>2010</fecha>
+</libro>
+</libros>
