@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <title>Sesión PHP</title>
@@ -28,7 +28,7 @@
         // print var_dump ($libros2);
         // print "</pre>";
     //Forma 3
-        
+            
     $libros = simplexml_load_file("libros.xml");
     print "total de libros: ". $libros ->count(). "<hr>"; #Me muestra la cantidad de libros que hay en el xml
     if($libros ===FALSE){
