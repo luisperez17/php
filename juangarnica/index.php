@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <title>Formulario PHP</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>Formulario PHP</h2>
