@@ -1,0 +1,45 @@
+Create table biblioteca(
+    id int(20) auto_increment primary key,
+    nombre VARCHAR(45),
+    pais VARCHAR(45),
+    direccion VARCHAR(45)
+);
+
+Create table libro(
+    id int(20) auto_increment primary key,
+    nombre VARCHAR(45),
+    autor VARCHAR(45),
+    editorial VARCHAR(45),
+    categoria VARCHAR(45),
+    paginas INT(20),
+    fecha_publicacion date
+);
+
+Create table usuario(
+    cedula int(10) primary key,
+    nombre VARCHAR(45),
+    fechaNa  VARCHAR(45),
+    email VARCHAR(45),
+    telefono INT(10),
+    direccion VARCHAR(45)
+);
+
+Create table stock(
+    id_biblioteca int,
+    id_libro int,
+    cantidad INT,
+    primary key(id_biblioteca, id_libro),
+    foreign key(id_biblioteca) references biblioteca(id),
+    foreign key(id_libro) references libro(id)
+);
+
+Create table prestamo(
+    id int(20) auto_increment primary key,
+    id_libro INT,
+    id_usuario INT,
+    id_biblioteca INT,
+    fecha DATE,
+    foreign key(id_libro) references libro(id),
+    foreign key(id_usuario) references usuario(cedula),
+    foreign key(id_biblioteca) references biblioteca(id)
+);
