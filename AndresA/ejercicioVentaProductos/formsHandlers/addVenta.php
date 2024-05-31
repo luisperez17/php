@@ -1,6 +1,6 @@
 <?php
 
-    include './conexiondb.php';
+    include '../conexiondb.php';
 
     if (isset($_POST['cliente']) && isset($_POST['vendedor']) && isset($_POST['producto']) && isset($_POST['cantidad']) && isset($_POST['fecha'])) {
         $cliente = $_POST['cliente'];
@@ -18,7 +18,7 @@
 
         if ($result) {
             echo "Información guardada correctamente";
-            header("Location: ./index.php");
+            header("Location: ../index.php");
         } else {
             echo $result;
         }

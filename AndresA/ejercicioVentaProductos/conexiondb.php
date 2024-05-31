@@ -13,7 +13,6 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        echo $values;
         // Prepare SQL query
         $sql = "INSERT INTO $table $columns VALUES $values";
 

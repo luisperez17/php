@@ -10,13 +10,41 @@
     <h2>Centro de Venta IKEA</h2>
     <div class="container">
         <div class="form-container">
+            <div class="form-add-cliente">
+                <h3>Añadir Cliente</h3>
+                <form action="./formsHandlers/addCliente.php" method="POST">
+                    <div class="input-container">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre">
+                    </div>
+                    <div class="input-container">
+                        <label for="cedula">Cedula:</label>
+                        <input type="number" name="cedula" id="cedula">
+                    </div>
+                    <div class="input-container">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="input-container">
+                        <label for="telefono">Telefono:</label>
+                        <input type="number" name="telefono" id="telefono">
+                    </div>
+                    <div class="input-container">
+                        <input type="submit" value="Añadir cliente">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="form-container">
             <div class="form-add-venta">
                 <h3>Añadir venta</h3>
-                <form action="addVenta.php" method="POST">
+                <form action="formsHandlers/addVenta.php" method="POST">
                     <div class="input-container">
                         <label for="cliente">Cliente:</label>
                         <select name="cliente" id="cliente">
                             <?php
+                                include './cifrado.php';
                                 include './conexiondb.php';
 
                                 $query = "SELECT * FROM cliente";
@@ -24,7 +52,9 @@
 
                                 if (count($result) > 0) {
                                     foreach($result as $row) {
-                                        echo "<option value='" . $row['id'] . "'>" . $row['nombre_usuario'] . "</option>";
+                                        $datos = array($row['nombre_usuario'], $row['cedula_usuario'], $row['correo_usuario'], $row['telefono_usuario']);
+                                        $descifrados = descifrarAES($datos);
+                                        echo "<option value='" . $row['id'] . "'>" . $descifrados[0] . "</option>";
                                     }
                                 }
                             ?>
@@ -93,7 +123,7 @@
         <div class="form-container">
             <div class="form-update-venta">
                 <h3>Actualizar venta</h3>
-                <form action="updateVenta.php" method="POST">
+                <form action="formsHandlers/updateVenta.php" method="POST">
                     <div class="input-container">
                         <label for="id">ID:</label>
                         <input type="number" name="id" id="id">
@@ -107,7 +137,9 @@
 
                                 if (count($result) > 0) {
                                     foreach($result as $row) {
-                                        echo "<option value='" . $row['id'] . "'>" . $row['nombre_usuario'] . "</option>";
+                                        $datos = array($row['nombre'], $row['cedula'], $row['email'], $row['telefono']);
+                                        $descifrados = descifrarAES($datos);
+                                        echo "<option value='" . $row['id'] . "'>" . $descifrados[0] . "</option>";
                                     }
                                 }
                             ?>
@@ -183,9 +215,11 @@
                         
                         if (count($result) > 0) {
                             foreach($result as $row) {
+                                $datos = array($row['nombre_cliente']);
+                                $descifrados = descifrarAES($datos);
                                 echo "<tr>";
                                 echo "<td>" . $row['id'] . "</td>";
-                                echo "<td>" . $row['nombre_cliente'] . "</td>";
+                                echo "<td>" . $descifrados[0] . "</td>";
                                 echo "<td>" . $row['nombre_vendedor'] . "</td>";
                                 echo "<td>" . $row['nombre_producto'] . "</td>";
                                 echo "<td>" . $row['cantidad'] . "</td>";
