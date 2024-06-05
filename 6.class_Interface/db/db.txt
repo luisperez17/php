@@ -1,0 +1,4 @@
+CREATE TABLE users(
+    email VARCHAR(100) primary key,
+    contrasena VARCHAR(100)
+);
