@@ -25,7 +25,7 @@ $moduloAutenticacion = new implementacionAutenticacion();
 $moduloUsuarios = new implementacionUsuarios();
 
 $moduloAutenticacion->registrarUsuario("juan","correo@correo.co", "contraseña123");
-$idiUsuario = $moduloAutenticacion->iniciarSesion("correo@correo.co", "contraseña123")
+$idiUsuario = $moduloAutenticacion->iniciarSesion("correo@correo.co", "contraseña123");
 $usuario = $moduloUsuarios->obtenerUsuario($idiUsuario);
 
 $conexion = new ConectoMysql("localhost", "user", "qwe123-.,","db");
