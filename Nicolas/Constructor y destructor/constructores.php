@@ -7,8 +7,7 @@ class Persona {
     function __construct($nombre,$edad){
         $this->nombre = $nombre;
         $this->edad = $edad;
-    }
-    
+    } 
 }
 
 $persona1 = new Persona("Juan", 30);
